@@ -1,0 +1,59 @@
+@import '../../styles/global.scss';
+
+._{
+    .container{
+        @extend %container;
+        .search_filter{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top:40px;
+            .search{
+                position: relative;
+                input.search_input{
+                    border:none;
+                    width: 450px;
+                    height:45px;
+                    -webkit-box-shadow: -1px 1px 6px 1px rgba(235,235,235,1);
+                    -moz-box-shadow: -1px 1px 6px 1px rgba(235,235,235,1);
+                    box-shadow: -1px 1px 6px 1px rgba(235,235,235,1);
+                    padding-left:60px;
+                    border-radius: 5px;
+                    &::placeholder{
+                        color:$dark-gray;
+                    }
+                }
+                .search_icon_cont{
+                    position:absolute;
+                    top:12px;
+                    left:20px;
+                    .search_icon{
+                        font-size: 20px;
+                        color:$dark-gray;
+                    }
+                }
+            }
+
+            .filter{
+                select{
+                    border:none;
+                    width: 150px;
+                    height:40px;
+                    -webkit-box-shadow: -1px 1px 6px 1px rgba(235,235,235,1);
+                    -moz-box-shadow: -1px 1px 6px 1px rgba(235,235,235,1);
+                    box-shadow: -1px 1px 6px 1px rgba(235,235,235,1);
+                    padding:0 10px;
+                }
+            }
+        }
+        .countries_container{
+            margin-top:50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            justify-content: center;
+            grid-gap: 40px 20px;
+            
+        }
+    }
+}

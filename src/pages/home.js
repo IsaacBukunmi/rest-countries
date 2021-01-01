@@ -1,10 +1,11 @@
 import React from 'react';
-import Nav from '../components/Nav';
+import Countries from '../components/CountryList';
+
 
 const Home = () => {
     return(
         <div>
-            <Nav />
+            <Countries />
         </div>
     )
 }

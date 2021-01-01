@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './index.module.scss';
-import { BiMoon } from "react-icons/bi"
+import { HiOutlineMoon } from "react-icons/hi"
 
 const Nav = () => {
     return(
@@ -10,7 +10,7 @@ const Nav = () => {
                     <h1>Where in the world?</h1>
                 </div>
                 <div className={styles.mode}>
-                    <BiMoon />Dark Mode
+                    <HiOutlineMoon className={styles.moon_icon} /><span>Dark Mode</span>
                 </div>
             </div>
         </div>

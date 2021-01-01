@@ -1,0 +1,45 @@
+@import '../../styles/global.scss';
+
+.country_link{
+    text-decoration: none;
+}
+.country_item{
+    -webkit-box-shadow: -1px 1px 6px 1px rgba(235,235,235,1);
+    -moz-box-shadow: -1px 1px 6px 1px rgba(235,235,235,1);
+    box-shadow: -1px 1px 6px 1px rgba(235,235,235,1);
+    width:260px;
+    border-radius: 10px;
+    
+    cursor: pointer;
+    .flag_image{
+        img{
+            height:150px;
+            width:100%;
+            object-fit: cover;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+    }
+
+    .country_tag{
+        padding:0 20px;
+        padding-bottom:40px;
+        h4{ 
+            color: $black;
+            font-weight: 800;
+            margin-bottom:0;
+        }
+        .other_details{
+            margin-top:10px;
+            p{
+                margin:0;
+                font-size: 13px;
+                color: $black;
+                font-weight: 500;
+                span{
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
