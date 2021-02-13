@@ -5,6 +5,7 @@ import { useParams, withRouter } from 'react-router-dom';
 import { useFetch } from '../../hooks/useFetch';
 
 const allCountriesURL = 'https://restcountries.eu/rest/v2/all';
+const countryAlphaURL = 'https://restcountries.eu/rest/v2/alpha/BRA'
 
 const CountryDetails = (props) => {
     const { name } = useParams()
