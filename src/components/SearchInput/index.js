@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import styles from './index.module.scss';
 import { AiOutlineSearch } from "react-icons/ai";
-import { useFetch } from '../../hooks/useFetch';
 
-const SearchInput = ({searchName, handleChange}) => {
-   
-
+const SearchInput = ({searchName, handleChange}) => {  
+    
     return(
         <>
             <input 

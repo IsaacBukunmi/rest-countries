@@ -8,9 +8,13 @@ export const useFetch = (url) => {
     const getdata = async () => {
         try{
             const response = await fetch(url);
-            const data = await response.json();
-            setData(data)
-            setIsLoading(false)
+            if(response.status === 200){
+                const data = await response.json();
+                setData(data)
+                setIsLoading(false)
+            }else{
+                console.error(`Error ${response.status} ${response.message}`);
+            }
         }catch{
             setError(error);
         }

@@ -1,0 +1,37 @@
+._{
+    width:200px;
+    font-size:14px;
+    font-weight:600;
+    .filter_select{
+        width:100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        -webkit-box-shadow: -1px 1px 6px 1px rgba(235,235,235,1);
+        -moz-box-shadow: -1px 1px 6px 1px rgba(235,235,235,1);
+        box-shadow: -1px 1px 6px 1px rgba(235,235,235,1);
+        border-radius: 5px;
+        padding: 0 17px;
+        cursor: pointer;
+        .dropdown_icon{
+            font-size: 20px;
+        }
+    }
+    .filter_options{
+        -webkit-box-shadow: -1px 1px 6px 1px rgba(235,235,235,1);
+        -moz-box-shadow: -1px 1px 6px 1px rgba(235,235,235,1);
+        box-shadow: -1px 1px 6px 1px rgba(235,235,235,1);
+        padding: 10px 17px;
+        border-radius: 10px;
+        margin-top:10px;
+        position: absolute;
+        z-index: 1000;
+        width: inherit;
+        background-color: #ffffff;
+        .option_item{
+            padding:3px 0;
+            cursor: pointer;
+        }
+    }
+    
+}

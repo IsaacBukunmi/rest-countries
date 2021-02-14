@@ -3,6 +3,7 @@ import styles from './index.module.scss';
 import { useFetch } from '../../hooks/useFetch';
 import CountryItem from '../CountryItem';
 import SearchInput from '../SearchInput';
+import FilterComponent from '../FilterComponent';
 
 
 const Countries = () => {
@@ -12,10 +13,21 @@ const Countries = () => {
 
     // Handle country search
     const [searchName, setSearchName] = useState("")
-    const {isLoading: isSearchLoading, data:searchedCountries} = useFetch(`https://restcountries.eu/rest/v2/name/${searchName}`)
+    const {isLoading: isSearchLoading, error:searchedError, data:searchedCountries} = useFetch(`https://restcountries.eu/rest/v2/name/${searchName}`)
 
     const handleChange = (e) => {
         setSearchName(e.target.value)
+    }
+
+    // 
+    const [filterName, setFilterName] = useState("")
+   
+    const {isLoading: isFilterLoading, data:filteredCountries} = useFetch(`https://restcountries.eu/rest/v2/region/${filterName}`)
+
+    console.log(filteredCountries)
+
+    if(searchedError){
+        return "Country not found"
     }
 
     return(
@@ -26,12 +38,7 @@ const Countries = () => {
                        <SearchInput searchName={searchName} setSearchName={setSearchName} handleChange={handleChange}/>
                     </div>
                     <div className={styles.filter}>
-                        <select>
-                            <option>Filter by region</option>
-                            <option>Africa</option>
-                            <option>Asia</option>
-                            <option>America</option>
-                        </select>
+                        <FilterComponent filterName={filterName} setFilterName={setFilterName} />
                     </div>
                 </div>
                 <div className={styles.countries_container}>
@@ -39,14 +46,22 @@ const Countries = () => {
                         isSearchLoading ? 'Loading...' : (
                             searchedCountries.map((country) => {
                                 return(
-                                    <CountryItem key={country.name} {...country}/>
+                                    <CountryItem key={country?.name} {...country}/>
+                                )
+                            })
+                        ):
+                    filterName ?
+                        isFilterLoading ? 'Loading...' : (
+                            filteredCountries.map((country) => {
+                                return(
+                                    <CountryItem key={country?.name} {...country}/>
                                 )
                             })
                         ):
                         isCountriesLoading ? 'Loading...' : (
                             countries.map((country) => {
                                 return(
-                                    <CountryItem key={country.name} {...country}/>
+                                    <CountryItem key={country?.name} {...country}/>
                                 )
                             })
                         )
