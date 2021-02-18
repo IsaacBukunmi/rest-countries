@@ -2,6 +2,9 @@
     width:200px;
     font-size:14px;
     font-weight:600;
+    @media (max-width:250px) {
+        width: 100%;
+    }
     .filter_select{
         width:100%;
         display: flex;
@@ -15,6 +18,10 @@
         cursor: pointer;
         .dropdown_icon{
             font-size: 20px;
+        }
+        .open{
+            font-size: 20px;
+            transform: rotate(-180deg);
         }
     }
     .filter_options{

@@ -19,12 +19,10 @@ const Countries = () => {
         setSearchName(e.target.value)
     }
 
-    // 
+    // Handle country filter by region
     const [filterName, setFilterName] = useState("")
-   
     const {isLoading: isFilterLoading, data:filteredCountries} = useFetch(`https://restcountries.eu/rest/v2/region/${filterName}`)
 
-    console.log(filteredCountries)
 
     if(searchedError){
         return "Country not found"

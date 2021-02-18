@@ -1,10 +1,11 @@
 @import '../../styles/global.scss';
 ._{
     margin-top:50px;
+    padding-bottom:50px;
     .container{
         @extend %container;
         .back_button{
-            margin-bottom:50px;
+            margin-bottom:70px;
             button{
                 background-color: $white;
                 padding:8px 30px;
@@ -31,17 +32,27 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            @media (max-width:768px) {
+                flex-direction: column;
+            }
             .country_flag{
                 width:40vw;
-                height: 350px;
+                height: auto;
+                @media (max-width:768px) {
+                    width:100%;
+                }
                 img{
                     width:100%;
-                    height: 100%;
+                    height: auto;
                     object-fit: cover;
                 }
             }
             .sub_details{
-                width:40vw;
+                width:45vw;
+                margin-top:5vh;
+                @media (max-width:768px) {
+                    width:100%;
+                }
                 .details_header{
                     h2{
                         margin-top:0;
@@ -52,6 +63,9 @@
                 .sub_section_details{
                     display: flex;
                     justify-content: space-between;
+                    @media (max-width:768px) {
+                        display: block;
+                    }
                     .section_one{
                         p{
                             color:$black;
@@ -61,6 +75,9 @@
                             span{
                                 font-weight: 700;
                             }
+                        }
+                        @media (max-width:768px) {
+                            margin-bottom:40px;
                         }
                     }
                     .section_two{
@@ -80,11 +97,17 @@
                 display: flex;
                 align-items: center;
                 margin-top:50px;
+                @media (max-width:768px) {
+                    display: block;
+                    margin-top:40px;
+                }
                 p{
                     color:$black;
                     font-size: 14px;
                     font-weight: 700;
                     margin-right:15px;
+                    min-width: 120px;
+                    
                 }
                 .border_counteries_list{
                     display: flex;

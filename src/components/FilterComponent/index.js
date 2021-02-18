@@ -6,6 +6,8 @@ import styles from './index.module.scss';
 const FilterComponent = ({filterName, setFilterName}) => {
     const [showOptions, setShowOptions] = useState(false)
 
+    // const open_drop_down = showOptions=== true && styles.open
+
     // if(filterName === "All"){
     //     return filterName === "Filter by region"
     // }
@@ -14,7 +16,7 @@ const FilterComponent = ({filterName, setFilterName}) => {
         <div className={styles._}>
             <div className={styles.filter_select} onClick={() => setShowOptions(!showOptions)}>
                 <p>{filterName || 'Filter by region'}</p>
-                <BiChevronDown className={styles.dropdown_icon}/>
+                <BiChevronDown className={showOptions === false ? styles.dropdown_icon : styles.open} />
             </div>
             { 
                 showOptions &&

@@ -9,7 +9,9 @@
     box-shadow: -1px 1px 6px 1px rgba(235,235,235,1);
     width:260px;
     border-radius: 10px;
-    
+    @media (max-width:320px) {
+        width: 100%;
+    }
     cursor: pointer;
     .flag_image{
         img{

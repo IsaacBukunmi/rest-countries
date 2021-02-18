@@ -12,6 +12,11 @@
             margin-top:40px;
             .search{
                 position: relative;
+                width:450px;
+                @media (max-width:768px) {
+                    width: 100%;
+                    margin-bottom: 30px;
+                }
             }
 
             .filter{
@@ -30,8 +35,11 @@
             margin-top:50px;
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            justify-content: center;
+            justify-items: center; // to center all grid items in the container
             grid-gap: 40px 20px;
+            @media (max-width:320px) {
+                grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+            }
             
         }
     }
