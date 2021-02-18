@@ -10,10 +10,21 @@ const countryAlphaURL = 'https://restcountries.eu/rest/v2/alpha/BRA'
 const CountryDetails = (props) => {
     const { name } = useParams()
     
-    const {isLoading, data} = useFetch(allCountriesURL)
-    const countries = data
-    const countryDetails = countries.find((country) => (country?.name === name))
+    const {isLoading:isDetailsLoading, data:allCountries} = useFetch(allCountriesURL)
+    const countryDetails = allCountries.find((country) => (country?.name === name))
     console.log(countryDetails)
+
+    const getCountryName = (countryCode) => {
+        let countryName = ""
+        allCountries.forEach((country) => {
+            if(country.alpha3Code === countryCode){
+                countryName = country.name
+            }
+        })
+        return countryName
+    }
+
+    
     
     return(
         <div className={styles._}>
@@ -48,7 +59,7 @@ const CountryDetails = (props) => {
                             <div className={styles.border_counteries_list}>
                                 {
                                     countryDetails?.borders.map((border) => (
-                                        <div className={styles.border_country_item}>{border}</div>
+                                        <div className={styles.border_country_item}>{getCountryName(border)}</div>
                                     ))
                                 }
                             </div>
