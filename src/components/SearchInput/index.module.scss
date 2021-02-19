@@ -8,6 +8,7 @@ input.search_input{
     padding-left:60px;
     border-radius: 5px;
     background-color: var(--col-element);
+    color: var(--col-text);
     outline: transparent;
     &::placeholder{
         color:var(--col-text);

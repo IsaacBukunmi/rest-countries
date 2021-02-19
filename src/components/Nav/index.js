@@ -4,8 +4,6 @@ import { HiOutlineMoon } from "react-icons/hi"
 import { Link } from 'react-router-dom';
 
 const Nav = ({toggleTheme, theme}) => {
-
-    console.log(theme)
    
     return(
         <div className={styles._}>

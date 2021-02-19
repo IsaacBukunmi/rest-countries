@@ -9,7 +9,6 @@ import FilterComponent from '../FilterComponent';
 const Countries = () => {
     // Fetch all countries
     const {isLoading: isCountriesLoading, data:countries} = useFetch('https://restcountries.eu/rest/v2/all')
-    console.log(countries)
 
     // Handle country search
     const [searchName, setSearchName] = useState("")
@@ -23,8 +22,6 @@ const Countries = () => {
     const [filterName, setFilterName] = useState("")
     const {isLoading: isFilterLoading, data:filteredCountries} = useFetch(`https://restcountries.eu/rest/v2/region/${filterName}`)
 
-
-    console.log(searchedError)
 
     return(
         <div className={styles._}>
