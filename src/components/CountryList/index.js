@@ -24,9 +24,7 @@ const Countries = () => {
     const {isLoading: isFilterLoading, data:filteredCountries} = useFetch(`https://restcountries.eu/rest/v2/region/${filterName}`)
 
 
-    if(searchedError){
-        return "Country not found"
-    }
+    console.log(searchedError)
 
     return(
         <div className={styles._}>
@@ -41,7 +39,7 @@ const Countries = () => {
                 </div>
                 <div className={styles.countries_container}>
                     { searchName ? 
-                        isSearchLoading ? 'Loading...' : (
+                        isSearchLoading ? <p className={styles.loading}>Loading...</p> : (
                             searchedCountries.map((country) => {
                                 return(
                                     <CountryItem key={country?.name} {...country}/>
@@ -49,17 +47,17 @@ const Countries = () => {
                             })
                         ):
                     filterName ?
-                        isFilterLoading ? 'Loading...' : (
+                        isFilterLoading ? <p className={styles.loading}>Loading...</p> : (
                             filteredCountries.map((country) => {
                                 return(
                                     <CountryItem key={country?.name} {...country}/>
                                 )
                             })
                         ):
-                        isCountriesLoading ? 'Loading...' : (
+                        isCountriesLoading ? <p className={styles.loading}>Loading...</p> : (
                             countries.map((country) => {
                                 return(
-                                    <CountryItem key={country?.name} {...country}/>
+                                    <CountryItem key={country?.name} {...country} isCountriesLoading={isCountriesLoading}/>
                                 )
                             })
                         )

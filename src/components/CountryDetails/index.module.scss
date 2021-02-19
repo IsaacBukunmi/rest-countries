@@ -1,21 +1,19 @@
 @import '../../styles/global.scss';
 ._{
     margin-top:50px;
-    padding-bottom:50px;
+    padding-bottom:80px;
     .container{
         @extend %container;
         .back_button{
             margin-bottom:70px;
             button{
-                background-color: $white;
-                padding:8px 30px;
+                background-color: var(--col-element);
+                padding:8px 25px 10px 25px;
                 border-radius: 5px;
-                color:$black;
+                color:var(--col-text);
                 border: none;
                 font-size: 16px;
-                -webkit-box-shadow: -1px 1px 5px 1px rgba(201,201,201,1);
-                -moz-box-shadow: -1px 1px 5px 1px rgba(201,201,201,1);
-                box-shadow: -1px 1px 5px 1px rgba(201,201,201,1);
+                box-shadow: var(--shadow-element);
                 cursor: pointer;
                 .back_icon{
                     font-size:20px;
@@ -23,7 +21,7 @@
                     position: relative;
                     top:4px;
                     font-weight: 900;
-                    color:$black;
+                    color:var(--col-text);
                 }
             }
         }
@@ -58,6 +56,7 @@
                         margin-top:0;
                         margin-bottom: 10px;
                         font-weight: 800;
+                        color: var(--col-text);
                     }
                 }
                 .sub_section_details{
@@ -68,7 +67,7 @@
                     }
                     .section_one{
                         p{
-                            color:$black;
+                            color:var(--col-text);
                             font-size: 14px;
                             margin-bottom: 8px;
                             margin-top: 8px;
@@ -82,7 +81,7 @@
                     }
                     .section_two{
                         p{
-                            color:$black;
+                            color:var(--col-text);
                             font-size: 14px;
                             margin-bottom: 8px;
                             margin-top: 8px;
@@ -102,7 +101,7 @@
                     margin-top:40px;
                 }
                 p{
-                    color:$black;
+                    color:var(--col-text);
                     font-size: 14px;
                     font-weight: 700;
                     margin-right:15px;
@@ -116,9 +115,9 @@
                     flex-wrap: wrap;
                     .border_country_item{
                         padding: 5px 20px;
-                        -webkit-box-shadow: -1px 1px 5px 1px rgba(242,239,242,1);
-                        -moz-box-shadow: -1px 1px 5px 1px rgba(242,239,242,1);
-                        box-shadow: -1px 1px 5px 1px rgba(242,239,242,1);
+                        color: var(--col-text);
+                        background-color: var(--col-element);
+                        box-shadow: var(--shadow-element);
                         margin-right:10px;
                         font-size: 14px;
                         margin-bottom:5px;

@@ -6,7 +6,7 @@
 
 body{
     font-family: $font-primary;
-    background: $white;
+    background: var(--col-bg);
     height:100%;
     // min-height:100vh;
     width:100%;

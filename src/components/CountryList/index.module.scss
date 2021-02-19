@@ -40,7 +40,12 @@
             @media (max-width:320px) {
                 grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
             }
-            
+            .loading{
+                color: var(--col-text);
+                font-size:20px;
+                font-style: italic;
+                height: 100vh;
+            }
         }
     }
 }

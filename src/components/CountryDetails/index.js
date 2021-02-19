@@ -59,7 +59,7 @@ const CountryDetails = (props) => {
                             <div className={styles.border_counteries_list}>
                                 {
                                     countryDetails?.borders.map((border) => (
-                                        <div className={styles.border_country_item}>{getCountryName(border)}</div>
+                                        <div className={styles.border_country_item} onClick={() => props.history.push(`${getCountryName(border)}`)}>{getCountryName(border)}</div>
                                     ))
                                 }
                             </div>

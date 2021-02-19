@@ -2,9 +2,8 @@
 
 ._{
     padding:15px 0px;
-   -webkit-box-shadow: 3px 7px 4px -3px rgba(235,235,235,1);
-    -moz-box-shadow: 3px 7px 4px -3px rgba(235,235,235,1);
-    box-shadow: 3px 7px 4px -3px rgba(235,235,235,1);
+    box-shadow: var(--shadow-element);
+    background-color: var(--col-element);
     .container{
         @extend %container;
         display: flex;
@@ -13,7 +12,7 @@
         .header{
             a{
                 text-decoration: none;
-                color:#000000;
+                color:var(--col-text);
             }
             h1{
                 margin-top:0;
@@ -33,10 +32,13 @@
             .moon_icon{
                 position: relative;
                 top:2px;
+                color: var(--col-text);
+                fill: $white;
             }
             span{
                 padding-left:6px;
                 font-weight: 600;
+                color: var(--col-text);
             }
             @media (max-width:480px) {
                 font-size:14px;

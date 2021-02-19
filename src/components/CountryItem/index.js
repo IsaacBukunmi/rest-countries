@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom';
 import styles from './index.module.scss';
 
 
-const CountryItem = ({name, population, capital, region, flag}) => {
+const CountryItem = ({name, population, capital, region, flag, isCountriesLoading}) => {
     return(
         <Link to={`/country/${name}`} className={styles.country_link}>
             <div className={styles.country_item}>
                 <div className={styles.flag_image}>
-                    <img src={flag} alt={name}/>
+                    {
+                        isCountriesLoading ?  <div className={styles.skeleton_loader}></div> : <img src={flag} alt={name}/>
+                    }
                 </div>
                 <div className={styles.country_tag}>
                     <h4 className={styles.country_name}>{name}</h4>

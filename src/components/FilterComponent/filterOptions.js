@@ -1,15 +1,19 @@
 const filterOptions = [
+    // {
+    //     id:1,
+    //     title: 'All'
+    // },
     {
         id:1,
-        title: 'All'
-    },
-    {
-        id:2,
         title: 'Africa'
     }, 
     {
-        id:3, 
+        id:2, 
         title: 'Americas'
+    },
+    {
+        id:3, 
+        title: 'Asia'
     },
     {
         id:4,

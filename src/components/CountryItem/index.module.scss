@@ -4,15 +4,18 @@
     text-decoration: none;
 }
 .country_item{
-    -webkit-box-shadow: -1px 1px 6px 1px rgba(235,235,235,1);
-    -moz-box-shadow: -1px 1px 6px 1px rgba(235,235,235,1);
-    box-shadow: -1px 1px 6px 1px rgba(235,235,235,1);
+    box-shadow: var(--shadow-element);
     width:260px;
     border-radius: 10px;
+    transition: all .5s ease-in-out;
+    background-color: var(--col-element);
     @media (max-width:320px) {
         width: 100%;
     }
     cursor: pointer;
+    &:hover{
+        transform: scale(1.03);
+    }
     .flag_image{
         img{
             height:150px;
@@ -21,13 +24,36 @@
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
         }
+        .skeleton_loader{
+            height:150px;
+            width:100%;
+            background: rgb(227,227,227);
+            background: linear-gradient(90deg, rgba(227,227,227,1) 0%, rgba(182,182,182,1) 7%, rgba(182,182,182,1) 13%, rgba(227,227,227,1) 25%);
+            background-size:900%;
+            background-position: 100% 0%;
+            animation: animation 1.8s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+        }
+        
+        @keyframes animation {
+            0% {
+            background-position: 100% 0%;
+            }
+            99% {
+            background-position: -30% 0%;
+            }
+            100% {
+            background-position: 100% 0%;
+            }
+        }
     }
 
     .country_tag{
         padding:0 20px;
         padding-bottom:40px;
         h4{ 
-            color: $black;
+            color: var(--col-text);
             font-weight: 800;
             margin-bottom:0;
         }
@@ -36,7 +62,7 @@
             p{
                 margin:0;
                 font-size: 13px;
-                color: $black;
+                color: var(--col-text);
                 font-weight: 500;
                 span{
                     font-weight: 700;
@@ -45,3 +71,4 @@
         }
     }
 }
+
