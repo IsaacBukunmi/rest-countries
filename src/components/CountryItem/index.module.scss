@@ -5,16 +5,17 @@
 }
 .country_item{
     box-shadow: var(--shadow-element);
-    width:260px;
+    width:300px;
     border-radius: 10px;
     transition: all .5s ease-in-out;
     background-color: var(--col-element);
+    transform: scale(0.97);
     @media (max-width:320px) {
         width: 100%;
     }
     cursor: pointer;
     &:hover{
-        transform: scale(1.03);
+        transform: scale(1);
     }
     .flag_image{
         img{

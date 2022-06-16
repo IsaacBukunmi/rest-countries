@@ -5,7 +5,7 @@ export const useFetch = (url) => {
     const [data, setData] = useState([]);
     const [error, setError] = useState(null)
 
-    const getdata = async () => {
+    const fetchData = async () => {
         try{
             const response = await fetch(url);
             if(response.status === 200){
@@ -22,10 +22,6 @@ export const useFetch = (url) => {
         }
     } 
 
-    useEffect(() => {
-        getdata()
-    }, [url])
-
-    return {isLoading, error, data}
+    return {isLoading, error, data, fetchData}
 }
 
