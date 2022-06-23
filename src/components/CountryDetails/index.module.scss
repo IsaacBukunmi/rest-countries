@@ -58,11 +58,23 @@
                     width:100%;
                 }
                 .details_header{
+                    display: flex;
+                    column-gap: 10px;
+                    align-items: center;
                     h2{
                         margin-top:0;
                         margin-bottom: 10px;
                         font-weight: 800;
                         color: var(--col-text);
+                    }
+                    .coat_of_arms{
+                        width: 35px;
+                        height: 35px;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
                     }
                 }
                 .sub_section_details{
